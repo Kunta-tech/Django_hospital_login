@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sample Hospital | {% block title %}{% endblock title %}</title>
+
+    {% block links %}
+    {% endblock links %}
+    
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto" style="width: 100%;">
+        <div class="inner">
+          <h3 class="masthead-brand">S.Hospital</h3>
+          <div style="width: 50px;"></div>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="/">Home</a>
+            {% if user.is_authenticated %}
+            <a class="nav-link active" href="/logout">Logout</a>
+            {% endif %}
+          </nav>
+        </div>
+      </header>
+
+      {% block content %}
+      {% endblock content %}
+
+      
+
+      <footer class="mastfoot mt-auto">
+        {% block footer %}
+        {% endblock footer %}
+        <div>
+            <p>Website made by Saugata Kundu</p>
+        </div>
+        <a href="/admin">admin</a>
+      </footer>
+    </div>
+
+    {% block JavaScript %}
+    {% endblock JavaScript %}
+  </body>
+</html>
